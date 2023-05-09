@@ -1,6 +1,6 @@
 // Reference Video - https://www.youtube.com/watch?v=bWaucYA1YRI&list=PL_HlKez9XCSM0bs8P7LtCTGh4rghAD2im&index=2
 
-Callbacks;
+// Callbacks;
 function add(a, b) {
   return a + b;
 }
