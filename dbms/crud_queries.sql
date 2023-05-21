@@ -51,7 +51,8 @@ SELECT * FROM albums;
 -- Printing unique names of albums
 SELECT DISTINCT name FROM albums;
 
-UPDATE albums SET release_year = 1965 WHERE name = 'With The Beatles';
+-- set release year to 1965 for all albums with name 'With The Beatles'
+UPDATE SET release_year = 1965 WHERE name = 'With The Beatles';
 
 SELECT * FROM albums WHERE release_year < 1966;
 
