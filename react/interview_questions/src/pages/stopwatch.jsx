@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-export default function CountdownTimer() {
+export default function Stopwatch() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [timer, setTimer] = useState(0);
 
