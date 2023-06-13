@@ -1,3 +1,5 @@
+ import java.util.*;
+ 
  public class BuildTree{
 
     static class Node {
@@ -64,7 +66,39 @@
         System.out.print(root.data + " ");
     }
 
-    // LevelOrder Traversal: TC: O(n)
+    // LevelOrder Traversal: TC: O(n) - BFS
+    public static void LevelOrderTraversal(Node root){
+        if(root == null){
+            System.out.println(-1);
+            return;
+        }
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(null);
+
+        while(!queue.isEmpty()){
+            Node currentNode = queue.remove();
+
+            if(currentNode == null){
+                System.out.println();
+                if(!queue.isEmpty()){
+                    queue.add(null);
+                }else {
+                    break;
+                }
+            }else{
+                System.out.print(currentNode.data + " ");
+
+                if(currentNode.left != null){
+                    queue.add(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    queue.add(currentNode.right);
+                }
+            }
+        }
+    }
 
     public static void main(String[] args){
         int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
@@ -82,5 +116,8 @@
 
         System.out.println("\nPostOrder Traversal:"); 
         PostOrderTraversal(root);
+
+        System.out.println("\nLevelOrder Traversal:"); 
+        LevelOrderTraversal(root);
     }
 }
